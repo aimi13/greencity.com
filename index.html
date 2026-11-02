@@ -1,0 +1,3685 @@
+
+
+<!DOCTYPE html>
+
+<html lang="ms">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MyGreenCity.com | Smart Green City</title>
+
+<style>
+
+:root {
+
+  --green: #8da98a;
+
+  --dark-green: #526f55;
+
+  --light-green: #edf3e8;
+
+  --yellow: #f5e8a8;
+
+  --white: #fffefa;
+
+  --text: #465747;
+
+  --grey: #faf9f1;
+
+  --border: #e3e8d9;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: var(--grey);
+
+  color: var(--text);
+
+  line-height: 1.6;
+
+}
+
+.hidden {
+
+  display: none !important;
+
+}
+
+button, input, select, textarea {
+
+  font: inherit;
+
+}
+
+button {
+
+  cursor: pointer;
+
+}
+
+button:disabled {
+
+  opacity: .6;
+
+  cursor: not-allowed;
+
+}
+
+.btn {
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 10px 17px;
+
+  font-weight: bold;
+
+  background: var(--green);
+
+  color: white;
+
+}
+
+.btn:hover {
+
+  background: var(--dark-green);
+
+}
+
+.btn-yellow {
+
+  background: var(--yellow);
+
+  color: #263426;
+
+}
+
+.btn-yellow:hover {
+
+  background: #f5d94e;
+
+}
+
+.btn-red {
+
+  background: #b42318;
+
+}
+
+.btn-grey {
+
+  background: #e5e7eb;
+
+  color: #222;
+
+}
+
+.btn-small {
+
+  padding: 6px 10px;
+
+  font-size: 13px;
+
+  margin: 2px;
+
+}
+
+header {
+
+  background: var(--green);
+
+  color: white;
+
+  padding: 18px 5%;
+
+}
+
+.header-inner {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+}
+
+.brand h1 {
+
+  margin: 0;
+
+  font-size: 27px;
+
+}
+
+.brand p {
+
+  margin: 2px 0 0;
+
+  font-size: 13px;
+
+}
+
+nav {
+
+  background: var(--dark-green);
+
+  padding: 8px 4%;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+}
+
+nav button {
+
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  padding: 10px 12px;
+
+  border-radius: 6px;
+
+}
+
+nav button:hover,
+
+nav button.active {
+
+  background: var(--yellow);
+
+  color: #213b27;
+
+}
+
+main {
+
+  max-width: 1200px;
+
+  padding: 25px 18px 45px;
+
+  margin: auto;
+
+  min-height: 65vh;
+
+}
+
+.hero {
+
+  background: linear-gradient(120deg, #14532d, #58a86b);
+
+  color: white;
+
+  border-radius: 16px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  margin-bottom: 25px;
+
+}
+
+.hero h2 {
+
+  font-size: clamp(28px, 4vw, 43px);
+
+  margin: 0 0 10px;
+
+}
+
+.hero p {
+
+  max-width: 700px;
+
+  margin: 0 auto 20px;
+
+}
+
+.section-title {
+
+  color: var(--dark-green);
+
+  margin: 0 0 20px;
+
+  border-left: 6px solid var(--yellow);
+
+  padding-left: 12px;
+
+}
+
+.content-card {
+
+  background: white;
+
+  padding: 22px;
+
+  margin: 15px 0;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  box-shadow: 0 3px 12px #173c1b0b;
+
+}
+
+.content-card h3 {
+
+  color: var(--dark-green);
+
+  margin-top: 0;
+
+}
+
+.card-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+  gap: 16px;
+
+}
+
+.card-grid .content-card {
+
+  margin: 0;
+
+}
+
+.icon {
+
+  font-size: 35px;
+
+}
+
+form {
+
+  display: grid;
+
+  gap: 12px;
+
+}
+
+label {
+
+  font-weight: bold;
+
+  display: block;
+
+  margin-bottom: 4px;
+
+}
+
+input, select, textarea {
+
+  width: 100%;
+
+  padding: 11px;
+
+  border: 1px solid #bdcdbf;
+
+  border-radius: 7px;
+
+  background: white;
+
+}
+
+textarea {
+
+  min-height: 100px;
+
+  resize: vertical;
+
+}
+
+.form-row {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 14px;
+
+}
+
+.notice {
+
+  background: #fff9d8;
+
+  border-left: 5px solid #e6c52e;
+
+  border-radius: 6px;
+
+  padding: 12px 15px;
+
+  margin: 14px 0;
+
+}
+
+.success {
+
+  background: #e7f8eb;
+
+  border-left: 5px solid #2d9a4b;
+
+  padding: 12px;
+
+  border-radius: 6px;
+
+  margin: 12px 0;
+
+}
+
+.error {
+
+  background: #feeceb;
+
+  border-left: 5px solid #c0392b;
+
+  padding: 12px;
+
+  border-radius: 6px;
+
+  margin: 12px 0;
+
+}
+
+.auth-wrapper {
+
+  max-width: 530px;
+
+  margin: 35px auto;
+
+  padding: 25px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: 0 4px 20px #00000012;
+
+}
+
+.auth-wrapper h2 {
+
+  color: var(--dark-green);
+
+  text-align: center;
+
+}
+
+.auth-actions {
+
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+}
+
+.banner-image {
+
+  width: 100%;
+
+  max-height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+
+}
+
+.photo-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 16px;
+
+}
+
+.photo-grid img {
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  background: #e3eee4;
+
+}
+
+.table-wrap {
+
+  overflow-x: auto;
+
+}
+
+table {
+
+  border-collapse: collapse;
+
+  width: 100%;
+
+  background: white;
+
+  min-width: 650px;
+
+}
+
+th, td {
+
+  padding: 11px;
+
+  border: 1px solid var(--border);
+
+  text-align: left;
+
+  vertical-align: top;
+
+}
+
+th {
+
+  background: var(--light-green);
+
+  color: var(--dark-green);
+
+}
+
+.status {
+
+  display: inline-block;
+
+  border-radius: 20px;
+
+  padding: 3px 10px;
+
+  background: #edf1ed;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+}
+
+.status.pending {
+
+  background: #fff2bd;
+
+}
+
+.status.approved {
+
+  background: #d9f7df;
+
+}
+
+footer {
+
+  background: var(--dark-green);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 24px 15px;
+
+}
+
+footer p {
+
+  margin: 4px;
+
+}
+
+.small-text {
+
+  font-size: 13px;
+
+  color: #5d6c60;
+
+}
+
+footer .small-text {
+
+  color: #e0eee3;
+
+}
+
+@media (max-width: 600px) {
+
+  .brand h1 {
+
+    font-size: 23px;
+
+  }
+
+  nav button {
+
+    padding: 8px;
+
+    font-size: 13px;
+
+  }
+
+  .hero {
+
+    padding: 30px 18px;
+
+  }
+
+  main {
+
+    padding: 18px 12px 35px;
+
+  }
+
+}
+
+/* =====================================================
+
+   SENTUHAN AESTHETIC: KUNING PASTEL + HIJAU SAGE
+
+   Hanya mengubah gaya visual; kandungan dan fungsi asal
+
+   dikekalkan.
+
+\===================================================== */
+
+body {
+
+  background:
+
+    radial-gradient(circle at 8% 4%, rgba(245,232,168,.22), transparent 25%),
+
+    linear-gradient(180deg, #fbfaf3 0%, #f4f6ed 100%);
+
+  color: var(--text);
+
+}
+
+button, input, select, textarea {
+
+  transition: background .22s ease, color .22s ease, border-color .22s ease,
+
+              box-shadow .22s ease, transform .22s ease;
+
+}
+
+.btn {
+
+  border-radius: 999px;
+
+  padding: 11px 21px;
+
+  background: #789579;
+
+  color: #fffefa;
+
+  box-shadow: 0 5px 13px rgba(82,111,85,.15);
+
+}
+
+.btn:hover {
+
+  background: #526f55;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 17px rgba(82,111,85,.19);
+
+}
+
+.btn-yellow {
+
+  background: #f5e8a8;
+
+  color: #526348;
+
+  box-shadow: 0 5px 13px rgba(190,169,91,.13);
+
+}
+
+.btn-yellow:hover {
+
+  background: #eddb82;
+
+  color: #405641;
+
+}
+
+.btn-red {
+
+  background: #c97870;
+
+  color: white;
+
+}
+
+.btn-grey {
+
+  background: #eef0e8;
+
+  color: #526348;
+
+}
+
+header {
+
+  background: linear-gradient(120deg, #789579, #9eb59a);
+
+  color: #fffefa;
+
+  box-shadow: 0 4px 18px rgba(72,99,74,.10);
+
+}
+
+.brand h1 {
+
+  letter-spacing: .3px;
+
+}
+
+.brand p {
+
+  color: #f8f8ed;
+
+}
+
+nav {
+
+  background: #526f55;
+
+  box-shadow: 0 4px 14px rgba(65,91,67,.12);
+
+  gap: 8px;
+
+}
+
+nav button {
+
+  border-radius: 999px;
+
+  padding: 10px 15px;
+
+  color: #fffefa;
+
+}
+
+nav button:hover,
+
+nav button.active {
+
+  background: #f5e8a8;
+
+  color: #526348;
+
+}
+
+main {
+
+  padding-top: 32px;
+
+  padding-bottom: 52px;
+
+}
+
+.hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: linear-gradient(125deg, #607f63 0%, #91ad8c 58%, #b4c5a0 100%);
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  border-radius: 24px;
+
+  padding: 58px 28px;
+
+  box-shadow: 0 12px 28px rgba(76,105,78,.15);
+
+}
+
+.hero::before,
+
+.hero::after {
+
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.09);
+
+  pointer-events: none;
+
+}
+
+.hero::before {
+
+  width: 230px;
+
+  height: 230px;
+
+  top: -125px;
+
+  right: 7%;
+
+}
+
+.hero::after {
+
+  width: 150px;
+
+  height: 150px;
+
+  bottom: -95px;
+
+  left: 8%;
+
+}
+
+.hero h2,
+
+.hero p,
+
+.hero button {
+
+  position: relative;
+
+  z-index: 1;
+
+}
+
+.section-title {
+
+  color: #526f55;
+
+  border-left: 6px solid #f0df91;
+
+  padding: 5px 0 5px 14px;
+
+  margin-top: 28px;
+
+}
+
+.content-card,
+
+.auth-wrapper {
+
+  background: rgba(255,254,250,.96);
+
+  border: 1px solid #e5e9dc;
+
+  border-radius: 18px;
+
+  box-shadow: 0 7px 22px rgba(70,91,68,.07);
+
+}
+
+.content-card {
+
+  padding: 25px;
+
+  margin: 17px 0;
+
+}
+
+.content-card h3,
+
+.auth-wrapper h2 {
+
+  color: #5b795d;
+
+}
+
+.card-grid .content-card {
+
+  transition: transform .22s ease, box-shadow .22s ease;
+
+}
+
+.card-grid .content-card:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 25px rgba(70,91,68,.12);
+
+}
+
+.icon {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 18px;
+
+  background: #f5f0d7;
+
+  margin-bottom: 8px;
+
+}
+
+input, select, textarea {
+
+  border: 1px solid #dce4d5;
+
+  border-radius: 11px;
+
+  background: #fffefa;
+
+  color: #465747;
+
+  padding: 12px 14px;
+
+}
+
+input:focus, select:focus, textarea:focus {
+
+  outline: none;
+
+  border-color: #91ad8c;
+
+  box-shadow: 0 0 0 3px rgba(145,173,140,.18);
+
+}
+
+label {
+
+  color: #526f55;
+
+}
+
+.notice {
+
+  background: #fbf5d9;
+
+  border-left: 5px solid #e6d27f;
+
+  border-radius: 12px;
+
+}
+
+.success {
+
+  background: #edf5e9;
+
+  border-left: 5px solid #8da98a;
+
+  border-radius: 12px;
+
+}
+
+.error {
+
+  background: #fbefeb;
+
+  border-left: 5px solid #c97870;
+
+  border-radius: 12px;
+
+}
+
+.auth-wrapper {
+
+  padding: 30px;
+
+  box-shadow: 0 12px 30px rgba(70,91,68,.10);
+
+}
+
+.banner-image,
+
+.photo-grid img {
+
+  border-radius: 17px;
+
+  box-shadow: 0 7px 18px rgba(70,91,68,.10);
+
+}
+
+.photo-grid img {
+
+  border: 4px solid #fffefa;
+
+  transition: transform .22s ease;
+
+}
+
+.photo-grid img:hover {
+
+  transform: scale(1.025);
+
+}
+
+table {
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+}
+
+th {
+
+  background: #eaf0e3;
+
+  color: #526f55;
+
+}
+
+th, td {
+
+  border-color: #e3e8d9;
+
+}
+
+.status {
+
+  background: #eff1e9;
+
+  color: #526348;
+
+  padding: 5px 11px;
+
+}
+
+.status.pending {
+
+  background: #fbf1c9;
+
+}
+
+.status.approved {
+
+  background: #e2efdc;
+
+}
+
+footer {
+
+  background: linear-gradient(120deg, #526f55, #789579);
+
+  color: #fffefa;
+
+  padding: 30px 15px;
+
+}
+
+footer .small-text {
+
+  color: #edf2e8;
+
+}
+
+.small-text {
+
+  color: #778477;
+
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+
+    border-radius: 18px;
+
+    padding: 38px 20px;
+
+  }
+
+  .auth-wrapper {
+
+    padding: 22px;
+
+  }
+
+  .content-card {
+
+    padding: 19px;
+
+  }
+
+  nav {
+
+    padding: 10px 3%;
+
+  }
+
+}
+
+/* =====================================================
+   REKAAN MODEN UNTUK SEMUA BAHAGIAN NAVIGASI
+   Gaya visual sahaja — kandungan dan fungsi asal dikekalkan.
+===================================================== */
+
+#mainNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 13px 4%;
+  background: rgba(68, 96, 70, .96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 10px 28px rgba(45, 70, 47, .16);
+  gap: 9px;
+}
+
+#mainNav button {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #fdfdf6;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .15px;
+  background: transparent;
+  transition: background .25s ease, color .25s ease,
+              transform .25s ease, box-shadow .25s ease,
+              border-color .25s ease;
+}
+
+#mainNav button:hover {
+  background: rgba(255,255,255,.13);
+  border-color: rgba(255,255,255,.22);
+  color: #fffefa;
+  transform: translateY(-2px);
+}
+
+#mainNav button.active {
+  background: linear-gradient(135deg, #f8edbd, #e9d98f);
+  color: #405b43;
+  border-color: rgba(255,255,255,.5);
+  box-shadow: 0 5px 14px rgba(20, 42, 23, .18);
+}
+
+#mainNav button:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(245,232,168,.8);
+  outline-offset: 3px;
+}
+
+.page {
+  animation: pageReveal .42s ease both;
+}
+
+@keyframes pageReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page .section-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  margin: 4px 0 24px;
+  padding: 8px 0 8px 17px;
+  border-left: 5px solid #e8d98f;
+  color: #49694d;
+  font-size: clamp(23px, 3vw, 30px);
+  letter-spacing: -.45px;
+}
+
+.page .content-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(21px, 3vw, 30px);
+  margin: 18px 0;
+  border: 1px solid rgba(210, 222, 202, .9);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fffefa 0%, #fbfcf6 100%);
+  box-shadow: 0 8px 24px rgba(65, 91, 67, .07);
+  transition: transform .28s ease, box-shadow .28s ease,
+              border-color .28s ease;
+}
+
+.page .content-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 54px;
+  height: 3px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(90deg, #8da98a, #e8d98f);
+}
+
+.page .content-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd9c4;
+  box-shadow: 0 15px 32px rgba(65, 91, 67, .11);
+}
+
+.page .content-card h3 {
+  margin: 2px 0 11px;
+  color: #527456;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.page .content-card p {
+  color: #667466;
+  line-height: 1.8;
+}
+
+.page .content-card ul {
+  padding-left: 22px;
+  color: #647365;
+}
+
+.page .content-card li {
+  padding: 5px 0 5px 3px;
+  line-height: 1.7;
+}
+
+.page .content-card li::marker {
+  color: #8da98a;
+}
+
+.page .card-grid {
+  align-items: stretch;
+  gap: 19px;
+  margin: 18px 0 24px;
+}
+
+.page .card-grid .content-card {
+  height: 100%;
+  min-height: 190px;
+  margin: 0;
+}
+
+.page .icon {
+  width: 62px;
+  height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 15px;
+  border: 1px solid #e9e8d4;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #f8f4df, #eaf1e5);
+  box-shadow: 0 5px 14px rgba(82,111,85,.08);
+  font-size: 31px;
+}
+
+#page-utama .hero {
+  margin-bottom: 28px;
+}
+
+#page-utama .section-title {
+  margin-top: 30px;
+}
+
+#page-mengenai .content-card h3:not(:first-child) {
+  margin-top: 24px;
+  padding-top: 15px;
+  border-top: 1px solid #e9eee3;
+}
+
+#page-inisiatif .content-card,
+#page-komuniti .content-card,
+#page-hubungi .content-card,
+#page-profil .content-card,
+#page-admin .content-card {
+  margin-bottom: 22px;
+}
+
+#page-inisiatif #borangPenyertaan {
+  background: linear-gradient(145deg, #fffefa, #f4f7ed);
+  border-color: #dce7d6;
+}
+
+#page-inisiatif form,
+#page-hubungi form {
+  gap: 15px;
+}
+
+#page-inisiatif form .btn,
+#page-hubungi form .btn {
+  justify-self: start;
+  min-width: 190px;
+}
+
+#page-berita .content-card {
+  padding-left: 30px;
+}
+
+#page-berita .content-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+#page-direktori .card-grid .content-card {
+  min-height: 215px;
+}
+
+#page-profil .content-card p {
+  padding: 10px 13px;
+  margin: 9px 0;
+  border-radius: 11px;
+  background: #f4f7ef;
+}
+
+#page-profil .content-card p b {
+  color: #506f54;
+}
+
+.page .notice,
+.page .success,
+.page .error {
+  border-radius: 14px;
+  padding: 15px 18px;
+  line-height: 1.65;
+}
+
+.page .table-wrap {
+  border: 1px solid #e2e9dc;
+  border-radius: 15px;
+  background: #fffefa;
+  box-shadow: 0 5px 16px rgba(65,91,67,.05);
+}
+
+.page table {
+  border: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.page th {
+  padding: 14px 13px;
+  background: #eaf1e4;
+  color: #4e6d51;
+  font-size: 13px;
+  letter-spacing: .2px;
+  border-color: #e1e9dc;
+}
+
+.page td {
+  padding: 13px;
+  color: #5b695c;
+  border-color: #e8ede3;
+}
+
+.page tbody tr:nth-child(even) {
+  background: #fbfcf8;
+}
+
+.page tbody tr:hover {
+  background: #f3f7ed;
+}
+
+.page .status {
+  padding: 6px 12px;
+  border: 1px solid rgba(82,111,85,.1);
+}
+
+.page .photo-grid {
+  gap: 19px;
+}
+
+.page .photo-grid > div {
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid #e6ebdf;
+  border-radius: 17px;
+  background: #fffefa;
+  box-shadow: 0 6px 18px rgba(65,91,67,.07);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.page .photo-grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(65,91,67,.12);
+}
+
+.page .photo-grid img {
+  display: block;
+  height: 215px;
+  border-radius: 12px;
+}
+
+.page .photo-grid p {
+  margin: 10px 4px 3px;
+  color: #557357;
+  font-weight: 700;
+}
+
+.page .small-text {
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  #mainNav {
+    position: relative;
+    padding: 12px 10px;
+    gap: 7px;
+  }
+
+  #mainNav button {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .page .content-card {
+    border-radius: 17px;
+    padding: 20px;
+  }
+
+  .page .card-grid {
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page,
+  .page *,
+  #mainNav button {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* ===== KEMAS KINI AESTHETIC UNTUK SEMUA HALAMAN NAVIGASI ===== */
+.page:not(#page-utama) {
+  padding: clamp(18px, 3.5vw, 38px);
+  border-radius: 26px;
+  background: linear-gradient(135deg, #f2f7ee 0%, #fffdf5 52%, #edf4e9 100%);
+  border: 1px solid #e3ebdd;
+  box-shadow: 0 12px 32px rgba(64, 93, 67, .06);
+}
+.page:not(#page-utama) > .section-title {
+  display: block;
+  text-align: center;
+  border: 0;
+  padding: 8px 0 17px;
+  margin: 0 0 27px;
+  color: #405d43;
+  font-size: clamp(27px, 3.5vw, 36px);
+  letter-spacing: -.7px;
+}
+.page:not(#page-utama) > .section-title::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 4px;
+  border-radius: 20px;
+  margin: 13px auto 0;
+  background: linear-gradient(90deg, #8da98a, #f0df91);
+}
+.page:not(#page-utama) > p {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  color: #718071;
+  text-align: center;
+  line-height: 1.85;
+}
+.page:not(#page-utama) .content-card {
+  background: rgba(255,255,255,.94);
+  border: 1px solid #e2eadc;
+  border-radius: 22px;
+  box-shadow: 0 9px 25px rgba(64,93,67,.065);
+}
+.page:not(#page-utama) .content-card:hover {
+  transform: translateY(-5px);
+  border-color: #cbdcc4;
+  box-shadow: 0 16px 32px rgba(64,93,67,.12);
+}
+.page:not(#page-utama) .content-card h3 {
+  color: #49694d;
+  font-size: 20px;
+}
+.page:not(#page-utama) .content-card p,
+.page:not(#page-utama) .content-card li {
+  color: #6b796b;
+  line-height: 1.85;
+}
+.page:not(#page-utama) .card-grid {
+  gap: 20px;
+  margin: 24px 0 28px;
+}
+.page:not(#page-utama) .card-grid .content-card {
+  min-height: 215px;
+  padding: 27px;
+}
+#page-inisiatif .content-card,
+#page-komuniti .content-card,
+#page-direktori .content-card,
+#page-berita .content-card,
+#page-hubungi .content-card,
+#page-profil .content-card,
+#page-admin .content-card {
+  position: relative;
+  overflow: hidden;
+}
+#page-inisiatif .content-card::after,
+#page-komuniti .content-card::after,
+#page-direktori .content-card::after,
+#page-berita .content-card::after,
+#page-hubungi .content-card::after,
+#page-profil .content-card::after,
+#page-admin .content-card::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: -55px;
+  bottom: -65px;
+  border-radius: 50%;
+  background: rgba(226, 237, 218, .45);
+  pointer-events: none;
+}
+#page-komuniti .content-card {
+  min-height: 205px;
+  padding: 30px;
+}
+#page-berita .content-card {
+  border-left: 5px solid #9ab394;
+}
+#page-berita .content-card:nth-of-type(3) {
+  border-left-color: #e6d58d;
+}
+#page-direktori .card-grid .content-card {
+  min-height: 225px;
+}
+#page-hubungi .content-card {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 34px;
+}
+#page-profil .content-card {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page-profil .content-card p {
+  background: #f3f7ef;
+  border: 1px solid #e6eee1;
+  border-radius: 13px;
+  padding: 12px 15px;
+}
+#page-admin .notice {
+  max-width: 950px;
+  margin: 0 auto 24px;
+  background: #fff8df;
+  border: 1px solid #f0e4b7;
+  border-left: 5px solid #e4d184;
+  border-radius: 16px;
+  padding: 17px 20px;
+  color: #6f704f;
+}
+#page-admin .content-card {
+  margin-top: 22px;
+}
+.page:not(#page-utama) .btn {
+  border-radius: 999px;
+  padding: 12px 22px;
+  box-shadow: 0 6px 15px rgba(70, 100, 72, .12);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.page:not(#page-utama) .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(70, 100, 72, .18);
+}
+.page:not(#page-utama) input,
+.page:not(#page-utama) select,
+.page:not(#page-utama) textarea {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 13px;
+  border: 1px solid #dce7d6;
+  background: #fffefa;
+}
+.page:not(#page-utama) .table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid #e1e9dc;
+  background: #fff;
+}
+/* Reka bentuk khas Mengenai Kami */
+.about-section {
+  padding: 8px 0;
+}
+.about-header {
+  text-align: center;
+  margin: 0 auto 35px;
+}
+.about-header span {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 30px;
+  background: #dcebd7;
+  color: #526f55;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+.about-header h2 {
+  color: #405d43;
+  font-size: clamp(28px, 4vw, 36px);
+  margin: 17px 0 10px;
+}
+.about-header p {
+  color: #718071;
+  line-height: 1.8;
+}
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.about-intro img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 23px;
+  box-shadow: 0 12px 28px rgba(64,93,67,.14);
+}
+.about-text, .about-card {
+  background: #fff;
+  padding: 27px;
+  border: 1px solid #e2eadc;
+  border-radius: 21px;
+  box-shadow: 0 9px 24px rgba(64,93,67,.07);
+}
+.about-text h3, .about-card h3 {
+  color: #49694d;
+  margin: 0 0 13px;
+}
+.about-text p, .about-card p, .about-card li {
+  color: #6b796b;
+  line-height: 1.85;
+}
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px;
+}
+.about-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: #edf4e8;
+  border-radius: 17px;
+  font-size: 29px;
+  margin-bottom: 15px;
+}
+.about-message {
+  margin-top: 24px;
+  padding: 28px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(120deg, #526f55, #789579);
+  border-radius: 22px;
+}
+.about-message h3 {
+  color: #f5e8a8;
+  margin: 0 0 9px;
+}
+.about-message p {
+  line-height: 1.8;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .page:not(#page-utama) { padding: 18px; border-radius: 19px; }
+  .about-intro, .about-cards { grid-template-columns: 1fr; }
+  .about-intro img { height: 250px; }
+  #page-hubungi .content-card { padding: 22px; }
+}
+
+
+/* ===== KOMPONEN GAMBAR, DATA DAN CARTA UNTUK SEMUA NAV ===== */
+.visual-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;margin:22px 0 28px}
+.visual-intro img{width:100%;height:290px;object-fit:cover;border-radius:22px;box-shadow:0 12px 28px rgba(64,93,67,.13)}
+.visual-copy{padding:25px;background:#fff;border:1px solid #e2eadc;border-radius:21px;box-shadow:0 8px 22px rgba(64,93,67,.06)}
+.visual-copy h3{margin:0 0 10px;color:#49694d;font-size:23px}
+.visual-copy p{color:#6b796b;line-height:1.85;margin:0}
+.visual-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin:22px 0 28px}
+.visual-photo{overflow:hidden;background:#fff;border:1px solid #e2eadc;border-radius:19px;box-shadow:0 8px 20px rgba(64,93,67,.07);transition:.25s}
+.visual-photo:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(64,93,67,.13)}
+.visual-photo img{display:block;width:100%;height:175px;object-fit:cover}
+.visual-photo div{padding:15px 17px}
+.visual-photo h4{color:#49694d;margin:0 0 5px;font-size:16px}
+.visual-photo p{color:#718071;margin:0;font-size:13px;line-height:1.65}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:15px;margin:22px 0}
+.data-tile{padding:20px;background:linear-gradient(145deg,#fff,#f2f7ed);border:1px solid #e0e9d9;border-radius:18px;box-shadow:0 7px 18px rgba(64,93,67,.06)}
+.data-tile .data-icon{font-size:25px}
+.data-tile strong{display:block;color:#49694d;font-size:27px;margin:6px 0 2px}
+.data-tile span{color:#718071;font-size:12px;line-height:1.5}
+.chart-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:19px;margin:22px 0}
+.chart-panel{min-width:0;background:#fff;border:1px solid #e2eadc;border-radius:20px;padding:22px;box-shadow:0 8px 22px rgba(64,93,67,.06)}
+.chart-panel h3{color:#49694d;margin:0 0 5px}
+.chart-panel p{color:#778477;font-size:12px;line-height:1.6;margin:0 0 14px}
+.chart-holder{position:relative;height:270px;width:100%}
+.sample-note{padding:13px 16px;margin:15px 0;background:#fff8df;border:1px solid #efe3b6;border-left:5px solid #e4d184;border-radius:13px;color:#716d4e;font-size:13px;line-height:1.7}
+.section-banner{position:relative;overflow:hidden;min-height:210px;margin:15px 0 25px;padding:30px;border-radius:22px;display:flex;align-items:flex-end;color:white;background-size:cover;background-position:center;box-shadow:0 10px 25px rgba(64,93,67,.12)}
+.section-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,65,39,.82),rgba(35,65,39,.12))}
+.section-banner div{position:relative;z-index:1;max-width:620px}
+.section-banner h3{font-size:26px;margin:0 0 7px;color:white}
+.section-banner p{margin:0;line-height:1.7;color:#f4f7ee}
+.mini-tag{display:inline-block;padding:6px 11px;border-radius:30px;background:#edf4e8;color:#526f55;font-size:11px;font-weight:800;letter-spacing:.4px;margin-bottom:9px}
+@media(max-width:760px){.visual-intro{grid-template-columns:1fr}.visual-intro img{height:230px}.section-banner{min-height:190px;padding:22px}.chart-holder{height:240px}}
+
+/* Membesarkan gambar dalam laman web */
+.photo-grid img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Kesan apabila tetikus menyentuh gambar */
+.photo-grid img:hover {
+    transform: scale(1.04);
+}
+
+/* Saiz gambar untuk paparan telefon */
+@media (max-width: 600px) {
+    .photo-grid img {
+        height: 600px;
+    }
+}
+
+</style>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- PAPARAN LOG MASUK / PENDAFTARAN -->
+
+<section id="authScreen">
+
+  <header>
+
+    <div class="header-inner">
+
+      <div class="brand">
+
+        <h1>🌱 MyGreenCity.com</h1>
+
+        <p>SMART GREEN CITY — Bersama Membina Bandar Hijau</p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="auth-wrapper">
+
+      <div id="loginPanel">
+
+        <h2>Log Masuk</h2>
+
+        <p class="small-text" style="text-align:center">
+
+          Log masuk untuk meneroka komuniti bandar hijau.
+
+        </p>
+
+        <div id="loginMessage" aria-live="polite"></div>
+
+        <form onsubmit="loginUser(event)">
+
+          <div>
+
+            <label for="loginEmail">E-mel / ID pengguna</label>
+
+            <input id="loginEmail" required autocomplete="username"
+
+              placeholder="Masukkan e-mel atau ID pengguna">
+
+          </div>
+
+          <div>
+
+            <label for="loginPassword">Kata laluan</label>
+
+            <input id="loginPassword" type="password" required
+
+              autocomplete="current-password" placeholder="Masukkan kata laluan">
+
+          </div>
+
+          <button class="btn" type="submit">Log Masuk</button>
+
+        </form>
+
+        <p>Belum mempunyai akaun?</p>
+
+        <button class="btn btn-yellow" onclick="showRegister()">
+
+          Daftar Akaun
+
+        </button>
+
+      </div>
+
+      <div id="registerPanel" class="hidden">
+
+        <button class="btn btn-grey" onclick="showLogin()">← Kembali</button>
+
+        <h2>Pendaftaran Pengguna</h2>
+
+        <p class="small-text">
+
+          Akaun baharu perlu mendapat kelulusan Admin sebelum boleh digunakan.
+
+        </p>
+
+        <div id="registerMessage" aria-live="polite"></div>
+
+        <form onsubmit="registerUser(event)">
+
+          <div>
+
+            <label for="regName">Nama penuh</label>
+
+            <input id="regName" required maxlength="100" placeholder="Nama penuh">
+
+          </div>
+
+          <div>
+
+            <label for="regEmail">E-mel / ID pengguna</label>
+
+            <input id="regEmail" required maxlength="150"
+
+              placeholder="Contoh: pengguna@email.com">
+
+          </div>
+
+          <div>
+
+            <label for="regPassword">Kata laluan</label>
+
+            <input id="regPassword" type="password" required minlength="6"
+
+              maxlength="100" placeholder="Sekurang-kurangnya 6 aksara">
+
+          </div>
+
+          <div>
+
+            <label for="regConfirm">Sahkan kata laluan</label>
+
+            <input id="regConfirm" type="password" required
+
+              placeholder="Masukkan kata laluan sekali lagi">
+
+          </div>
+
+          <button class="btn" type="submit">Hantar Pendaftaran</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</section>
+
+<!-- LAMAN WEB UTAMA -->
+
+<div id="website" class="hidden">
+
+  <header>
+
+    <div class="header-inner">
+
+      <div class="brand">
+
+        <h1>🌱 MyGreenCity.com</h1>
+
+        <p>SMART GREEN CITY — Bandar Lestari, Masa Depan Terjamin</p>
+
+      </div>
+
+      <div>
+
+        <span id="welcomeUser"></span>
+
+        <button class="btn btn-yellow" onclick="logoutUser()">Log Keluar</button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <nav id="mainNav">
+
+    <button onclick="navigate('utama')" data-page="utama">Utama</button>
+
+    <button onclick="navigate('mengenai')" data-page="mengenai">Mengenai Kami</button>
+
+    <button onclick="navigate('inisiatif')" data-page="inisiatif">Inisiatif Hijau</button>
+
+    <button onclick="navigate('komuniti')" data-page="komuniti">Komuniti</button>
+
+    <button onclick="navigate('direktori')" data-page="direktori">Direktori Hijau</button>
+
+    <button onclick="navigate('berita')" data-page="berita">Berita & Acara</button>
+
+    <button onclick="navigate('hubungi')" data-page="hubungi">Hubungi Kami</button>
+
+    <button onclick="navigate('profil')" data-page="profil">Profil Pengguna</button>
+
+    <button id="adminNav" class="hidden" onclick="navigate('admin')" data-page="admin">
+
+      Admin
+
+    </button>
+
+  </nav>
+
+  <main>
+
+    <!-- UTAMA -->
+
+    <section id="page-utama" class="page">
+
+      <div class="hero">
+
+        <h2>Selamat Datang ke MyGreenCity</h2>
+
+        <p>
+
+          Platform komuniti untuk berkongsi idea, menyertai aktiviti hijau
+
+          dan membina persekitaran yang lebih bersih serta lestari.
+
+        </p>
+
+        <button class="btn btn-yellow" onclick="navigate('inisiatif')">
+
+          Terokai Inisiatif Hijau
+
+        </button>
+
+      </div>
+
+      <img class="banner-image" src="images/banner1.jpg"
+
+        alt="Banner bandar hijau"
+
+        onerror="this.style.display='none'">
+
+      <h2 class="section-title">Komuniti Kita, Tanggungjawab Kita</h2>
+
+      <div class="card-grid">
+
+        <div class="content-card">
+
+          <div class="icon">🌳</div>
+
+          <h3>Persekitaran Hijau</h3>
+
+          <p>Memelihara tumbuhan dan menambah kawasan hijau untuk semua.</p>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">♻️</div>
+
+          <h3>Amalan Kitar Semula</h3>
+
+          <p>Mengurangkan sisa melalui pengasingan dan penggunaan semula bahan.</p>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">🤝</div>
+
+          <h3>Penglibatan Komuniti</h3>
+
+          <p>Melibatkan orang ramai dalam aktiviti dan projek mesra alam.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-card">
+        <span class="mini-tag">DASHBOARD HIJAU</span>
+        <h3>Gambaran Inisiatif MyGreenCity</h3>
+        <p>Kenali bidang tindakan utama yang boleh membantu membina bandar lebih lestari.</p>
+        <div class="data-grid">
+          <div class="data-tile"><div class="data-icon">🌳</div><strong>500</strong><span>Pokok sebagai sasaran contoh penanaman</span></div>
+          <div class="data-tile"><div class="data-icon">♻️</div><strong>1,000 kg</strong><span>Sasaran contoh bahan kitar semula</span></div>
+          <div class="data-tile"><div class="data-icon">🤝</div><strong>100</strong><span>Sasaran contoh penyertaan komuniti</span></div>
+          <div class="data-tile"><div class="data-icon">💧</div><strong>3</strong><span>Fokus utama kempen alam sekitar</span></div>
+        </div>
+        <div class="chart-layout">
+          <div class="chart-panel"><h3>Fokus Amalan Hijau</h3><p>Pecahan ilustrasi untuk tujuan penerangan.</p><div class="chart-holder"><canvas id="homeFocusChart"></canvas></div></div>
+          <div class="visual-copy"><h3>🌿 Data Membantu Perubahan</h3><p>Petunjuk seperti jumlah bahan dikitar semula, pokok yang ditanam dan penyertaan penduduk boleh digunakan untuk menilai kemajuan program. Angka di atas ialah sasaran contoh dan boleh digantikan dengan data sebenar apabila tersedia.</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+
+        <h3>Galeri Komuniti</h3>
+
+        <div class="photo-grid">
+
+          <div>
+
+            <img src="gambar/aimipd.jpg" alt="Aktiviti komuniti 1"
+
+              onerror="this.style.display='none'">
+
+            <p>Aktiviti Komuniti</p>
+
+          </div>
+
+          <div>
+
+            <img src="gambar/amandapd.jpg" alt="Aktiviti komuniti 2"
+
+              onerror="this.style.display='none'">
+
+            <p>Kesedaran Alam Sekitar</p>
+
+          </div>
+
+          <div>
+
+            <img src="gambar/anipd.jpg" alt="Aktiviti komuniti 3"
+
+              onerror="this.style.display='none'">
+
+            <p>Kerjasama Penduduk</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MENGENAI KAMI -->
+    <section id="page-mengenai" class="page hidden">
+      <div class="about-section">
+        <div class="about-header">
+          <span>🌿 TENTANG KAMI</span>
+          <h2>Mengenai MyGreenCity</h2>
+          <p>Bersama membina persekitaran yang lebih bersih, hijau dan lestari untuk masa hadapan.</p>
+        </div>
+        <div class="about-intro">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000" alt="Pemandangan hutan hijau">
+          <div class="about-text">
+            <h3>🌍 Apakah MyGreenCity?</h3>
+            <p>MyGreenCity ialah platform komuniti yang menggalakkan gaya hidup lestari, penjagaan alam sekitar dan penglibatan masyarakat dalam membangunkan bandar yang lebih hijau.</p>
+            <p>Kami percaya bahawa setiap individu mampu memainkan peranan penting dalam melindungi bumi melalui tindakan kecil yang memberi impak besar.</p>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-icon">🌱</div>
+            <h3>Visi Kami</h3>
+            <p>Mewujudkan komuniti yang bersih, hijau, sihat dan lestari.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🎯</div>
+            <h3>Misi Kami</h3>
+            <ul>
+              <li>Meningkatkan kesedaran tentang penjagaan alam sekitar.</li>
+              <li>Menggalakkan amalan hijau dalam kehidupan seharian.</li>
+              <li>Menghubungkan penduduk melalui projek mesra alam.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-message">
+          <h3>💚 Sayangi Bumi, Mulakan Perubahan!</h3>
+          <p>Bersama MyGreenCity, kita mampu menjadikan dunia lebih hijau untuk generasi akan datang.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INISIATIF HIJAU -->
+
+    <section id="page-inisiatif" class="page hidden">
+
+      <h2 class="section-title">Inisiatif Hijau</h2>
+
+      <p>
+
+        Ketahui projek hijau, pelajari amalan mesra alam dan sertai usaha
+
+        menjadikan komuniti kita lebih lestari.
+
+      </p>
+
+      <div class="card-grid">
+
+        <div class="content-card">
+
+          <div class="icon">♻️</div>
+
+          <h3>Projek Semasa / Utama</h3>
+
+          <p><b>Program Kitar Semula</b></p>
+
+          <p>Mengumpulkan dan mengasingkan kertas, plastik, kaca serta tin.</p>
+
+          <p><b>Program Penanaman Pokok</b></p>
+
+          <p>Menambah kawasan hijau di kawasan perumahan dan komuniti.</p>
+
+          <p><b>Pengurangan Plastik</b></p>
+
+          <p>Menggalakkan penggunaan beg guna semula dan mengurangkan plastik sekali guna.</p>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">🌿</div>
+
+          <h3>Panduan Amalan Hijau</h3>
+
+          <ul>
+
+            <li>Asingkan sisa dan kitar semula bahan yang sesuai.</li>
+
+            <li>Jimat elektrik dengan mematikan lampu apabila tidak digunakan.</li>
+
+            <li>Jimat air ketika mandi, mencuci dan menyiram tanaman.</li>
+
+            <li>Gunakan sisa organik untuk membuat kompos jika sesuai.</li>
+
+            <li>Bawa botol air dan beg guna semula.</li>
+
+          </ul>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">📊</div>
+
+          <h3>Pencapaian & Impak</h3>
+
+          <p>
+
+            Projek komuniti boleh mengukur impak melalui jumlah bahan dikitar
+
+            semula, pokok yang ditanam dan bilangan peserta.
+
+          </p>
+
+          <div class="notice">
+
+            <b>Contoh sasaran projek:</b>
+
+            <ul>
+
+              <li>1,000 kg plastik dikitar semula.</li>
+
+              <li>500 pokok ditanam.</li>
+
+              <li>100 orang menyertai aktiviti hijau.</li>
+
+            </ul>
+
+            <span class="small-text">
+
+              Angka ini ialah contoh sasaran, bukan statistik pencapaian sebenar.
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="section-banner" style="background-image:url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1400')">
+        <div><span class="mini-tag">TINDAKAN HIJAU</span><h3>Mulakan Dengan Langkah Kecil</h3><p>Amalan harian yang konsisten boleh menyokong persekitaran yang lebih bersih dan sihat.</p></div>
+      </div>
+      <div class="visual-gallery">
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Bahan untuk kitar semula"><div><h4>♻️ Kitar Semula</h4><p>Asingkan bahan mengikut kategori dan kurangkan sisa ke tapak pelupusan.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Aktiviti menanam tumbuhan"><div><h4>🌱 Penanaman Pokok</h4><p>Tambah kehijauan dan pelihara kawasan tanaman komuniti.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?w=800" alt="Botol guna semula"><div><h4>🧴 Kurangkan Plastik</h4><p>Gunakan botol dan beg guna semula dalam aktiviti seharian.</p></div></article>
+      </div>
+      <div class="content-card">
+        <span class="mini-tag">DATA PENERANGAN</span><h3>Contoh Pecahan Sasaran Projek</h3>
+        <div class="chart-layout">
+          <div class="chart-panel"><h3>Fokus Pengurusan Sisa</h3><p>Data contoh untuk menunjukkan komposisi kategori bahan.</p><div class="chart-holder"><canvas id="initiativeWasteChart"></canvas></div></div>
+          <div class="chart-panel"><h3>Sasaran Aktiviti Hijau</h3><p>Skor sasaran ilustrasi mengikut aktiviti (bukan pencapaian sebenar).</p><div class="chart-holder"><canvas id="initiativeActivityChart"></canvas></div></div>
+        </div>
+        <div class="sample-note">Nota: Carta ini menggunakan data demonstrasi sahaja. Gantikan nilainya dengan rekod program sebenar sebelum digunakan sebagai laporan rasmi.</div>
+      </div>
+
+      <!-- BORANG PENYERTAAN -->
+
+      <div class="content-card" id="borangPenyertaan">
+
+        <div class="icon">📝</div>
+
+        <h3>Borang Penyertaan / Sokongan</h3>
+
+        <p>
+
+          Berminat untuk menyertai projek hijau atau mencadangkan inisiatif
+
+          baharu? Isi borang ini. Permohonan akan direkodkan untuk semakan Admin.
+
+        </p>
+
+        <div id="mesejHantarInisiatif" aria-live="polite"></div>
+
+        <form onsubmit="hantarInisiatif(event)">
+
+          <div class="form-row">
+
+            <div>
+
+              <label for="namaInisiatif">Nama penuh</label>
+
+              <input id="namaInisiatif" maxlength="100" required
+
+                placeholder="Masukkan nama anda">
+
+            </div>
+
+            <div>
+
+              <label for="emailInisiatif">E-mel / ID pengguna</label>
+
+              <input id="emailInisiatif" maxlength="150" required
+
+                placeholder="E-mel untuk dihubungi">
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <label for="pilihanInisiatif">Pilih projek / jenis permohonan</label>
+
+            <select id="pilihanInisiatif" required>
+
+              <option value="">-- Pilih satu --</option>
+
+              <option value="Program Kitar Semula">Program Kitar Semula</option>
+
+              <option value="Program Penanaman Pokok">Program Penanaman Pokok</option>
+
+              <option value="Pengurangan Plastik">Pengurangan Plastik</option>
+
+              <option value="Cadangan Inisiatif Baharu">Cadangan Inisiatif Baharu</option>
+
+              <option value="Sokongan / Sukarelawan">Sokongan / Sukarelawan</option>
+
+            </select>
+
+          </div>
+
+          <div>
+
+            <label for="mesejInisiatif">Mesej / cadangan</label>
+
+            <textarea id="mesejInisiatif" maxlength="1500"
+
+              placeholder="Nyatakan sebab penyertaan atau cadangan anda..."
+
+              required></textarea>
+
+          </div>
+
+          <button class="btn" type="submit">Hantar Permohonan</button>
+
+        </form>
+
+        <p class="small-text">
+
+          Selepas dihantar, status permohonan boleh disemak oleh Admin.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- KOMUNITI -->
+
+    <section id="page-komuniti" class="page hidden">
+
+      <h2 class="section-title">Komuniti</h2>
+
+      <div class="content-card">
+
+        <h3>Jom Bergerak Bersama!</h3>
+
+        <p>
+
+          Setiap penduduk boleh membantu menjaga alam sekitar melalui
+
+          aktiviti kebersihan, penanaman pokok dan kempen kitar semula.
+
+        </p>
+
+        <button class="btn" onclick="navigate('inisiatif')">
+
+          Sertai Inisiatif Hijau
+
+        </button>
+
+      </div>
+
+      <div class="visual-gallery">
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Sukarelawan membersihkan kawasan"><div><h4>🧹 Gotong-royong</h4><p>Aktiviti bersama untuk menjaga kebersihan kawasan kejiranan.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800" alt="Pokok hijau dan alam semula jadi"><div><h4>🌳 Komuniti Menanam</h4><p>Kerjasama penduduk untuk menambah kawasan hijau.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800" alt="Aktiviti sukarelawan komuniti"><div><h4>🤝 Sukarelawan</h4><p>Setiap sumbangan masa dan tenaga membantu menjayakan program.</p></div></article>
+      </div>
+      <div class="content-card">
+        <span class="mini-tag">SASARAN KOMUNITI · CONTOH</span>
+        <h3>Petunjuk Penglibatan Komuniti</h3>
+        <div class="data-grid">
+          <div class="data-tile"><div class="data-icon">👥</div><strong>100</strong><span>Contoh sasaran peserta</span></div>
+          <div class="data-tile"><div class="data-icon">🧹</div><strong>4</strong><span>Contoh aktiviti komuniti setahun</span></div>
+          <div class="data-tile"><div class="data-icon">🌱</div><strong>3</strong><span>Contoh projek hijau utama</span></div>
+        </div>
+        <div class="sample-note">Angka ini ialah sasaran ilustrasi, bukan rekod kehadiran atau pencapaian sebenar.</div>
+      </div>
+
+      <div class="content-card">
+
+        <h3>Cadangan daripada Komuniti</h3>
+
+        <p>
+
+          Ada idea untuk menjadikan kawasan anda lebih hijau?
+
+          Hantarkan cadangan melalui borang Inisiatif Hijau.
+
+        </p>
+
+        <button class="btn btn-yellow" onclick="navigate('inisiatif')">
+
+          Hantar Cadangan
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- DIREKTORI HIJAU -->
+
+    <section id="page-direktori" class="page hidden">
+
+      <h2 class="section-title">Direktori Hijau</h2>
+
+      <div class="card-grid">
+
+        <div class="content-card">
+
+          <div class="icon">♻️</div>
+
+          <h3>Pusat Kitar Semula</h3>
+
+          <p>Gunakan pusat kitar semula yang tersedia di kawasan anda.</p>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">🌱</div>
+
+          <h3>Nurseri / Tanaman</h3>
+
+          <p>Dapatkan maklumat tanaman untuk aktiviti penghijauan.</p>
+
+        </div>
+
+        <div class="content-card">
+
+          <div class="icon">🚲</div>
+
+          <h3>Pengangkutan Mesra Alam</h3>
+
+          <p>Pertimbangkan berjalan kaki, berbasikal atau pengangkutan awam.</p>
+
+        </div>
+
+      </div>
+
+      <div class="visual-gallery">
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Bahan kitar semula"><div><h4>♻️ Lokasi Kitar Semula</h4><p>Semak kemudahan penerimaan kertas, plastik, kaca dan logam di kawasan anda.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Anak pokok di nurseri"><div><h4>🪴 Nurseri & Tanaman</h4><p>Rujuk nurseri setempat untuk mendapatkan tanaman yang sesuai dengan ruang anda.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800" alt="Basikal untuk mobiliti hijau"><div><h4>🚲 Mobiliti Lestari</h4><p>Kenal pasti laluan pejalan kaki, basikal dan pengangkutan awam yang tersedia.</p></div></article>
+      </div>
+      <div class="content-card">
+        <h3>📋 Senarai Semak Memilih Kemudahan Hijau</h3>
+        <div class="card-grid">
+          <div class="content-card"><div class="icon">📍</div><h3>Lokasi</h3><p>Pastikan alamat dan waktu operasi disahkan melalui penyedia kemudahan.</p></div>
+          <div class="content-card"><div class="icon">🗂️</div><h3>Jenis Perkhidmatan</h3><p>Semak bahan atau perkhidmatan yang diterima sebelum berkunjung.</p></div>
+          <div class="content-card"><div class="icon">☎️</div><h3>Maklumat Hubungan</h3><p>Dapatkan nombor atau saluran rasmi untuk pertanyaan lanjut.</p></div>
+        </div>
+      </div>
+
+      <p class="small-text">
+
+        Maklumat direktori ini ialah panduan umum. Tambahkan nama dan alamat
+
+        organisasi tempatan yang telah disahkan.
+
+      </p>
+
+    </section>
+
+    <!-- BERITA -->
+
+    <section id="page-berita" class="page hidden">
+
+      <h2 class="section-title">Berita & Acara</h2>
+
+      <div class="section-banner" style="background-image:url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1400')">
+        <div><span class="mini-tag">BERITA • AKTIVITI • INSPIRASI</span><h3>Aktiviti Hijau Bermula Dengan Komuniti</h3><p>Ikuti idea kempen dan aktiviti yang boleh dianjurkan bersama di kawasan kejiranan.</p></div>
+      </div>
+      <div class="visual-gallery">
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Anak pokok untuk kempen penanaman"><div><h4>🌳 Kempen Penanaman</h4><p>Rancang aktiviti menanam dan menjaga pokok bersama penduduk.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Pengasingan bahan kitar semula"><div><h4>♻️ Hari Kitar Semula</h4><p>Adakan sesi pengasingan bahan dan perkongsian amalan kitar semula.</p></div></article>
+        <article class="visual-photo"><img src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?w=800" alt="Air bersih dan alam semula jadi"><div><h4>💧 Kempen Jimat Air</h4><p>Kongsikan langkah mudah mengurangkan pembaziran air.</p></div></article>
+      </div>
+      <div class="sample-note">Kandungan di bawah ialah contoh idea berita dan acara. Tambahkan tarikh, lokasi serta maklumat penganjur selepas acara disahkan.</div>
+      <div class="content-card">
+
+        <h3>🌳 Kempen Penanaman Pokok</h3>
+
+        <p>Program penghijauan untuk meningkatkan kesedaran tentang kepentingan pokok.</p>
+
+      </div>
+
+      <div class="content-card">
+
+        <h3>♻️ Hari Kitar Semula</h3>
+
+        <p>Aktiviti mengumpulkan bahan kitar semula dan mendidik komuniti tentang pengurusan sisa.</p>
+
+      </div>
+
+      <div class="content-card">
+
+        <h3>💧 Kempen Jimat Air</h3>
+
+        <p>Menggalakkan penggunaan air secara berhemah di rumah dan kawasan awam.</p>
+
+      </div>
+
+    </section>
+
+    <!-- HUBUNGI -->
+
+    <section id="page-hubungi" class="page hidden">
+
+      <h2 class="section-title">Hubungi Kami</h2>
+
+      <div class="visual-intro">
+        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1000" alt="Landskap hijau dan alam semula jadi">
+        <div class="visual-copy"><span class="mini-tag">KAMI SEDIA MENDENGAR</span><h3>Suara Anda Membantu Bandar Lebih Hijau</h3><p>Kongsikan idea, cadangan aktiviti atau permohonan penyertaan melalui borang Inisiatif Hijau. Maklumat hubungan rasmi boleh ditambah di sini apabila tersedia.</p></div>
+      </div>
+      <div class="card-grid">
+        <div class="content-card"><div class="icon">💡</div><h3>Cadangan Idea</h3><p>Kongsikan idea untuk menambah baik kawasan hijau dan kebersihan komuniti.</p></div>
+        <div class="content-card"><div class="icon">🙋</div><h3>Penyertaan</h3><p>Nyatakan minat untuk menyertai projek atau menjadi sukarelawan.</p></div>
+        <div class="content-card"><div class="icon">📣</div><h3>Maklum Balas</h3><p>Sampaikan pandangan bagi membantu penambahbaikan inisiatif.</p></div>
+      </div>
+      <div class="content-card">
+
+        <h3>Hubungi Pasukan MyGreenCity</h3>
+
+        <p>Anda boleh menggunakan borang Inisiatif Hijau untuk menghantar cadangan atau permohonan.</p>
+
+        <button class="btn" onclick="navigate('inisiatif')">Pergi ke Borang</button>
+
+      </div>
+
+    </section>
+
+    <!-- PROFIL -->
+
+    <section id="page-profil" class="page hidden">
+
+      <h2 class="section-title">Profil Pengguna</h2>
+
+      <div class="content-card">
+
+        <h3>Maklumat Akaun</h3>
+
+        <p><b>Nama:</b> <span id="profileName"></span></p>
+
+        <p><b>ID pengguna:</b> <span id="profileEmail"></span></p>
+
+        <p><b>Status akaun:</b> <span id="profileStatus"></span></p>
+
+      </div>
+
+      <div class="content-card">
+        <span class="mini-tag">RINGKASAN AKAUN</span>
+        <h3>Aktiviti Saya di MyGreenCity</h3>
+        <div class="data-grid">
+          <div class="data-tile"><div class="data-icon">📝</div><strong id="profileTotalApps">0</strong><span>Jumlah permohonan saya</span></div>
+          <div class="data-tile"><div class="data-icon">⏳</div><strong id="profilePendingApps">0</strong><span>Menunggu semakan</span></div>
+          <div class="data-tile"><div class="data-icon">✅</div><strong id="profileApprovedApps">0</strong><span>Diluluskan / selesai</span></div>
+        </div>
+        <div class="chart-panel"><h3>Status Permohonan Saya</h3><p>Carta dikemas kini berdasarkan permohonan yang dihantar oleh akaun ini.</p><div class="chart-holder"><canvas id="profileStatusChart"></canvas></div></div>
+      </div>
+
+      <div class="content-card">
+
+        <h3>Permohonan Inisiatif Saya</h3>
+
+        <div id="myInitiativeApplications"></div>
+
+      </div>
+
+    </section>
+
+    <!-- PANEL ADMIN -->
+
+    <section id="page-admin" class="page hidden">
+
+      <h2 class="section-title">Panel Admin</h2>
+
+      <div class="notice">
+
+        Panel ini membolehkan Admin mengurus pendaftaran pengguna dan
+
+        menyemak permohonan Inisiatif Hijau.
+
+      </div>
+
+      <div class="content-card">
+        <span class="mini-tag">ANALITIK PENTADBIR</span>
+        <h3>Ringkasan Data Sistem</h3>
+        <div class="data-grid">
+          <div class="data-tile"><div class="data-icon">👥</div><strong id="adminTotalUsers">0</strong><span>Pengguna berdaftar</span></div>
+          <div class="data-tile"><div class="data-icon">⏳</div><strong id="adminPendingUsers">0</strong><span>Menunggu kelulusan</span></div>
+          <div class="data-tile"><div class="data-icon">🌿</div><strong id="adminTotalApps">0</strong><span>Permohonan inisiatif</span></div>
+          <div class="data-tile"><div class="data-icon">📌</div><strong id="adminPendingApps">0</strong><span>Menunggu semakan</span></div>
+        </div>
+        <div class="chart-layout">
+          <div class="chart-panel"><h3>Status Pengguna</h3><p>Data sebenar daripada pendaftaran dalam pelayar ini.</p><div class="chart-holder"><canvas id="adminUsersChart"></canvas></div></div>
+          <div class="chart-panel"><h3>Status Permohonan</h3><p>Data sebenar daripada borang Inisiatif Hijau dalam pelayar ini.</p><div class="chart-holder"><canvas id="adminAppsChart"></canvas></div></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+
+        <h3>Pengurusan Pengguna</h3>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Nama</th>
+
+                <th>ID pengguna</th>
+
+                <th>Status</th>
+
+                <th>Tindakan</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="userRows"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <div class="content-card">
+
+        <h3>Permohonan Borang Inisiatif Hijau</h3>
+
+        <p>
+
+          Semua permohonan yang tersimpan pada pelayar ini akan dipaparkan
+
+          dalam jadual di bawah.
+
+        </p>
+
+        <div id="adminInitiativeMessage" aria-live="polite"></div>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Tarikh</th>
+
+                <th>Nama</th>
+
+                <th>E-mel / ID</th>
+
+                <th>Jenis permohonan</th>
+
+                <th>Mesej / cadangan</th>
+
+                <th>Status</th>
+
+                <th>Tindakan</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="initiativeRows"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <div class="content-card">
+
+        <h3>Rekod Aktiviti</h3>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Tarikh</th>
+
+                <th>Aktiviti</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="activityRows"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p><b>🌱 MyGreenCity.com | SMART GREEN CITY</b></p>
+
+    <p>Bersama membina komuniti yang lebih hijau dan lestari.</p>
+
+    <p class="small-text">© 2026 MyGreenCity.com — Projek demonstrasi.</p>
+
+  </footer>
+
+</div>
+
+<script>
+
+/* =====================================================
+
+   PENYIMPANAN DATA DEMONSTRASI
+
+   Data ini disimpan pada pelayar yang sedang digunakan.
+
+\===================================================== */
+
+const USERS_KEY = "myGreenCity_users_v1";
+
+const INITIATIVES_KEY = "myGreenCity_initiatives_v1";
+
+const ACTIVITY_KEY = "myGreenCity_activity_v1";
+
+const SESSION_KEY = "myGreenCity_session_v1";
+
+const ADMIN_EMAIL = "admingreen.com";
+
+const ADMIN_PASSWORD = "aimi13";
+
+function readStorage(key, fallback) {
+
+  try {
+
+    const value = localStorage.getItem(key);
+
+    return value ? JSON.parse(value) : fallback;
+
+  } catch (error) {
+
+    return fallback;
+
+  }
+
+}
+
+function saveData(key, value) {
+
+  localStorage.setItem(key, JSON.stringify(value));
+
+}
+
+let users = readStorage(USERS_KEY, []);
+
+let initiativeApplications = readStorage(INITIATIVES_KEY, []);
+
+let activityLog = readStorage(ACTIVITY_KEY, []);
+
+let currentUser = null;
+
+/* Pastikan akaun demo Admin wujud dalam storan. */
+
+function ensureAdmin() {
+
+  users = readStorage(USERS_KEY, []);
+
+  const exists = users.some(user => user.email === ADMIN_EMAIL);
+
+  if (!exists) {
+
+    users.push({
+
+      id: "admin-account",
+
+      name: "Admin MyGreenCity",
+
+      email: ADMIN_EMAIL,
+
+      password: ADMIN_PASSWORD,
+
+      status: "Diluluskan",
+
+      role: "admin"
+
+    });
+
+    saveData(USERS_KEY, users);
+
+  }
+
+}
+
+function recordActivity(message) {
+
+  activityLog = readStorage(ACTIVITY_KEY, []);
+
+  activityLog.unshift({
+
+    date: new Date().toLocaleString("ms-MY"),
+
+    message: message
+
+  });
+
+  activityLog = activityLog.slice(0, 100);
+
+  saveData(ACTIVITY_KEY, activityLog);
+
+}
+
+function escapeHtml(value) {
+
+  return String(value ?? "").replace(/[&<>"']/g, character => ({
+
+    "&": "&amp;",
+
+    "<": "&lt;",
+
+    ">": "&gt;",
+
+    '"': "&quot;",
+
+    "'": "&#39;"
+
+  })[character]);
+
+}
+
+function createId() {
+
+  return Date.now().toString(36) +
+
+    Math.random().toString(36).slice(2, 9);
+
+}
+
+/* =====================================================
+
+   PAPARAN LOG MASUK DAN PENDAFTARAN
+
+\===================================================== */
+
+function showLogin() {
+
+  document.getElementById("loginPanel").classList.remove("hidden");
+
+  document.getElementById("registerPanel").classList.add("hidden");
+
+}
+
+function showRegister() {
+
+  document.getElementById("loginPanel").classList.add("hidden");
+
+  document.getElementById("registerPanel").classList.remove("hidden");
+
+}
+
+function registerUser(event) {
+
+  event.preventDefault();
+
+  users = readStorage(USERS_KEY, []);
+
+  const name = document.getElementById("regName").value.trim();
+
+  const email = document.getElementById("regEmail").value.trim().toLowerCase();
+
+  const password = document.getElementById("regPassword").value;
+
+  const confirm = document.getElementById("regConfirm").value;
+
+  const message = document.getElementById("registerMessage");
+
+  if (!name || !email || !password) {
+
+    message.innerHTML = '<div class="error">Sila lengkapkan semua maklumat.</div>';
+
+    return;
+
+  }
+
+  if (email === ADMIN_EMAIL) {
+
+    message.innerHTML = '<div class="error">ID ini dikhaskan untuk Admin.</div>';
+
+    return;
+
+  }
+
+  if (password.length < 6) {
+
+    message.innerHTML = '<div class="error">Kata laluan mestilah sekurang-kurangnya 6 aksara.</div>';
+
+    return;
+
+  }
+
+  if (password !== confirm) {
+
+    message.innerHTML = '<div class="error">Kata laluan tidak sepadan.</div>';
+
+    return;
+
+  }
+
+  const exists = users.some(user => user.email.toLowerCase() === email);
+
+  if (exists) {
+
+    message.innerHTML = '<div class="error">ID pengguna ini sudah didaftarkan.</div>';
+
+    return;
+
+  }
+
+  users.push({
+
+    id: createId(),
+
+    name: name,
+
+    email: email,
+
+    password: password,
+
+    status: "Menunggu Kelulusan",
+
+    role: "user"
+
+  });
+
+  saveData(USERS_KEY, users);
+
+  recordActivity("Pendaftaran akaun baharu: " + name);
+
+  message.innerHTML =
+
+    '<div class="success">Pendaftaran berjaya dihantar. Sila tunggu kelulusan Admin sebelum log masuk.</div>';
+
+  event.target.reset();
+
+}
+
+function loginUser(event) {
+
+  event.preventDefault();
+
+  users = readStorage(USERS_KEY, []);
+
+  const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+
+  const password = document.getElementById("loginPassword").value;
+
+  const message = document.getElementById("loginMessage");
+
+  if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+
+    ensureAdmin();
+
+    currentUser = users.find(user => user.email === ADMIN_EMAIL);
+
+    saveData(SESSION_KEY, { email: ADMIN_EMAIL });
+
+    recordActivity("Admin log masuk.");
+
+    openWebsite();
+
+    return;
+
+  }
+
+  const user = users.find(item =>
+
+    item.email.toLowerCase() === email &&
+
+    item.password === password
+
+  );
+
+  if (!user) {
+
+    message.innerHTML =
+
+      '<div class="error">ID pengguna atau kata laluan tidak betul.</div>';
+
+    return;
+
+  }
+
+  if (user.status !== "Diluluskan") {
+
+    message.innerHTML =
+
+      '<div class="notice">Akaun anda belum diluluskan oleh Admin. Status: ' +
+
+      escapeHtml(user.status) + '.</div>';
+
+    return;
+
+  }
+
+  currentUser = user;
+
+  saveData(SESSION_KEY, { email: user.email });
+
+  recordActivity("Pengguna log masuk: " + user.name);
+
+  openWebsite();
+
+}
+
+/* =====================================================
+   CARTA DAN RINGKASAN DATA MYGREENCITY
+   Carta sasaran ditandakan sebagai data demonstrasi.
+===================================================== */
+const greenChartInstances = {};
+function drawGreenChart(canvasId, type, labels, values, label) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || typeof Chart === "undefined") return;
+  if (greenChartInstances[canvasId]) greenChartInstances[canvasId].destroy();
+  const isPie = type === "doughnut" || type === "pie";
+  greenChartInstances[canvasId] = new Chart(canvas, {
+    type: type,
+    data: {
+      labels: labels,
+      datasets: [{
+        label: label || "Data",
+        data: values,
+        backgroundColor: ["#789579", "#b5c9a8", "#f0df91", "#8daec0", "#d9b7a4", "#a9b9a1"],
+        borderColor: "#fffefa",
+        borderWidth: 3,
+        borderRadius: isPie ? 0 : 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: isPie ? "bottom" : "top", labels: { usePointStyle: true, padding: 16 } } },
+      scales: isPie ? {} : { y: { beginAtZero: true, grid: { color: "#edf1e8" } }, x: { grid: { display: false } } }
+    }
+  });
+}
+function renderHomeCharts() {
+  drawGreenChart("homeFocusChart", "doughnut",
+    ["Kitar semula", "Penanaman pokok", "Kurangkan plastik", "Jimat air"],
+    [35, 25, 22, 18], "Fokus contoh");
+}
+function renderInitiativeCharts() {
+  drawGreenChart("initiativeWasteChart", "doughnut",
+    ["Plastik", "Kertas", "Kaca", "Logam", "Lain-lain"],
+    [30, 25, 15, 10, 20], "Pecahan contoh");
+  drawGreenChart("initiativeActivityChart", "bar",
+    ["Kitar semula", "Tanam pokok", "Kurangkan plastik", "Jimat air"],
+    [80, 100, 60, 75], "Sasaran ilustrasi");
+}
+function renderProfileSummary() {
+  if (!currentUser) return;
+  const mine = readStorage(INITIATIVES_KEY, []).filter(item =>
+    String(item.userEmail || "").toLowerCase() === currentUser.email.toLowerCase());
+  const pending = mine.filter(item => item.status === "Menunggu Semakan").length;
+  const approved = mine.filter(item => item.status === "Diluluskan" || item.status === "Selesai").length;
+  const setText = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+  setText("profileTotalApps", mine.length);
+  setText("profilePendingApps", pending);
+  setText("profileApprovedApps", approved);
+  const rejected = mine.filter(item => item.status === "Ditolak").length;
+  drawGreenChart("profileStatusChart", "doughnut",
+    ["Menunggu semakan", "Diluluskan / selesai", "Ditolak"],
+    [pending, approved, rejected], "Permohonan");
+}
+function renderAdminSummaryCharts() {
+  if (!currentUser || currentUser.role !== "admin") return;
+  const regularUsers = readStorage(USERS_KEY, []).filter(user => user.role !== "admin");
+  const apps = readStorage(INITIATIVES_KEY, []);
+  const pendingUsers = regularUsers.filter(user => user.status === "Menunggu Kelulusan").length;
+  const approvedUsers = regularUsers.filter(user => user.status === "Diluluskan").length;
+  const blockedUsers = regularUsers.filter(user => user.status === "Disekat").length;
+  const pendingApps = apps.filter(item => item.status === "Menunggu Semakan").length;
+  const approvedApps = apps.filter(item => item.status === "Diluluskan").length;
+  const completedApps = apps.filter(item => item.status === "Selesai").length;
+  const rejectedApps = apps.filter(item => item.status === "Ditolak").length;
+  const setText = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+  setText("adminTotalUsers", regularUsers.length);
+  setText("adminPendingUsers", pendingUsers);
+  setText("adminTotalApps", apps.length);
+  setText("adminPendingApps", pendingApps);
+  drawGreenChart("adminUsersChart", "doughnut",
+    ["Menunggu", "Diluluskan", "Disekat"],
+    [pendingUsers, approvedUsers, blockedUsers], "Pengguna");
+  drawGreenChart("adminAppsChart", "doughnut",
+    ["Menunggu", "Diluluskan", "Selesai", "Ditolak"],
+    [pendingApps, approvedApps, completedApps, rejectedApps], "Permohonan");
+}
+
+/* =====================================================
+
+   PAPARAN LAMAN WEB DAN NAVIGASI
+
+\===================================================== */
+
+function openWebsite() {
+
+  if (!currentUser) return;
+
+  document.getElementById("authScreen").classList.add("hidden");
+
+  document.getElementById("website").classList.remove("hidden");
+
+  document.getElementById("welcomeUser").textContent =
+
+    "Hai, " + currentUser.name + " ";
+
+  const isAdmin = currentUser.role === "admin";
+
+  document.getElementById("adminNav").classList.toggle("hidden", !isAdmin);
+
+  document.getElementById("profileName").textContent = currentUser.name;
+
+  document.getElementById("profileEmail").textContent = currentUser.email;
+
+  document.getElementById("profileStatus").textContent = currentUser.status;
+
+  renderMyInitiatives();
+
+  navigate("utama");
+
+}
+
+function navigate(page) {
+
+  if (page === "admin" && (!currentUser || currentUser.role !== "admin")) {
+
+    alert("Halaman ini hanya untuk Admin.");
+
+    return;
+
+  }
+
+  document.querySelectorAll(".page").forEach(section => {
+
+    section.classList.add("hidden");
+
+  });
+
+  const selected = document.getElementById("page-" + page);
+
+  if (!selected) return;
+
+  selected.classList.remove("hidden");
+
+  document.querySelectorAll("#mainNav button").forEach(button => {
+
+    button.classList.toggle("active", button.dataset.page === page);
+
+  });
+
+  if (page === "utama") {
+    renderHomeCharts();
+  }
+
+  if (page === "inisiatif") {
+    renderInitiativeCharts();
+  }
+
+  if (page === "admin") {
+
+    renderAdmin();
+    renderAdminSummaryCharts();
+
+  }
+
+  if (page === "profil") {
+
+    renderMyInitiatives();
+    renderProfileSummary();
+
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+}
+
+function logoutUser() {
+
+  if (currentUser) {
+
+    recordActivity("Pengguna log keluar: " + currentUser.name);
+
+  }
+
+  localStorage.removeItem(SESSION_KEY);
+
+  currentUser = null;
+
+  document.getElementById("website").classList.add("hidden");
+
+  document.getElementById("authScreen").classList.remove("hidden");
+
+  document.getElementById("loginMessage").innerHTML = "";
+
+  showLogin();
+
+}
+
+/* =====================================================
+
+   BORANG PENYERTAAN / SOKONGAN INISIATIF HIJAU
+
+\===================================================== */
+
+function hantarInisiatif(event) {
+
+  event.preventDefault();
+
+  if (!currentUser) {
+
+    alert("Sila log masuk terlebih dahulu.");
+
+    return;
+
+  }
+
+  initiativeApplications = readStorage(INITIATIVES_KEY, []);
+
+  const nama = document.getElementById("namaInisiatif").value.trim();
+
+  const email = document.getElementById("emailInisiatif").value.trim();
+
+  const pilihan = document.getElementById("pilihanInisiatif").value;
+
+  const mesej = document.getElementById("mesejInisiatif").value.trim();
+
+  const messageBox = document.getElementById("mesejHantarInisiatif");
+
+  if (!nama || !email || !pilihan || !mesej) {
+
+    messageBox.innerHTML =
+
+      '<div class="error">Sila lengkapkan semua ruangan borang.</div>';
+
+    return;
+
+  }
+
+  const application = {
+
+    id: createId(),
+
+    date: new Date().toLocaleString("ms-MY"),
+
+    userEmail: currentUser.email,
+
+    name: nama,
+
+    email: email,
+
+    type: pilihan,
+
+    message: mesej,
+
+    status: "Menunggu Semakan"
+
+  };
+
+  initiativeApplications.unshift(application);
+
+  saveData(INITIATIVES_KEY, initiativeApplications);
+
+  recordActivity("Permohonan Inisiatif Hijau dihantar oleh " + nama);
+
+  messageBox.innerHTML =
+
+    '<div class="success"><b>Permohonan berjaya dihantar!</b><br>' +
+
+    'Admin boleh menyemak permohonan ini melalui Panel Admin.</div>';
+
+  event.target.reset();
+
+  renderMyInitiatives();
+  renderProfileSummary();
+
+  /*
+
+    Jika Admin sedang membuka panel Admin dalam pelayar yang sama,
+
+    kemas kini jadual supaya permohonan baharu kelihatan.
+
+  */
+
+  if (currentUser.role === "admin") {
+
+    renderAdmin();
+
+  }
+
+}
+
+function renderMyInitiatives() {
+
+  const container = document.getElementById("myInitiativeApplications");
+
+  if (!container || !currentUser) return;
+
+  initiativeApplications = readStorage(INITIATIVES_KEY, []);
+
+  const mine = initiativeApplications.filter(item =>
+
+    item.userEmail.toLowerCase() === currentUser.email.toLowerCase()
+
+  );
+
+  if (mine.length === 0) {
+
+    container.innerHTML = "<p>Anda belum menghantar sebarang permohonan.</p>";
+
+    return;
+
+  }
+
+  container.innerHTML = mine.map(item => `
+
+    <div class="content-card">
+
+      <h3>${escapeHtml(item.type)}</h3>
+
+      <p><b>Tarikh:</b> ${escapeHtml(item.date)}</p>
+
+      <p><b>Mesej:</b> ${escapeHtml(item.message)}</p>
+
+      <p><b>Status:</b> <span class="status">${escapeHtml(item.status)}</span></p>
+
+    </div>
+
+  `).join("");
+
+}
+
+/* =====================================================
+
+   PANEL ADMIN: PENGURUSAN PENGGUNA
+
+\===================================================== */
+
+function renderAdmin() {
+
+  if (!currentUser || currentUser.role !== "admin") return;
+
+  users = readStorage(USERS_KEY, []);
+
+  activityLog = readStorage(ACTIVITY_KEY, []);
+
+  const userRows = document.getElementById("userRows");
+
+  const regularUsers = users.filter(user => user.role !== "admin");
+
+  if (regularUsers.length === 0) {
+
+    userRows.innerHTML =
+
+      '<tr><td colspan="4">Belum ada pengguna berdaftar.</td></tr>';
+
+  } else {
+
+    userRows.innerHTML = regularUsers.map(user => {
+
+      let actions = "";
+
+      if (user.status === "Menunggu Kelulusan") {
+
+        actions = `
+
+          <button class="btn btn-small" onclick="approveUser('${user.id}')">
+
+            Luluskan
+
+          </button>
+
+          <button class="btn btn-red btn-small" onclick="blockUser('${user.id}')">
+
+            Sekat
+
+          </button>
+
+        `;
+
+      } else if (user.status === "Diluluskan") {
+
+        actions = `
+
+          <button class="btn btn-red btn-small" onclick="blockUser('${user.id}')">
+
+            Sekat
+
+          </button>
+
+        `;
+
+      } else {
+
+        actions = `
+
+          <button class="btn btn-small" onclick="approveUser('${user.id}')">
+
+            Luluskan
+
+          </button>
+
+        `;
+
+      }
+
+      return `
+
+        <tr>
+
+          <td>${escapeHtml(user.name)}</td>
+
+          <td>${escapeHtml(user.email)}</td>
+
+          <td><span class="status">${escapeHtml(user.status)}</span></td>
+
+          <td>${actions}</td>
+
+        </tr>
+
+      `;
+
+    }).join("");
+
+  }
+
+  renderInitiativeApplications();
+  renderAdminSummaryCharts();
+
+  const activityRows = document.getElementById("activityRows");
+
+  if (activityLog.length === 0) {
+
+    activityRows.innerHTML =
+
+      '<tr><td colspan="2">Belum ada rekod aktiviti.</td></tr>';
+
+  } else {
+
+    activityRows.innerHTML = activityLog.map(item => `
+
+      <tr>
+
+        <td>${escapeHtml(item.date)}</td>
+
+        <td>${escapeHtml(item.message)}</td>
+
+      </tr>
+
+    `).join("");
+
+  }
+
+}
+
+function approveUser(userId) {
+
+  if (!currentUser || currentUser.role !== "admin") return;
+
+  users = readStorage(USERS_KEY, []);
+
+  const user = users.find(item => item.id === userId);
+
+  if (!user) return;
+
+  user.status = "Diluluskan";
+
+  saveData(USERS_KEY, users);
+
+  recordActivity("Admin meluluskan akaun: " + user.name);
+
+  renderAdmin();
+
+}
+
+function blockUser(userId) {
+
+  if (!currentUser || currentUser.role !== "admin") return;
+
+  users = readStorage(USERS_KEY, []);
+
+  const user = users.find(item => item.id === userId);
+
+  if (!user) return;
+
+  user.status = "Disekat";
+
+  saveData(USERS_KEY, users);
+
+  recordActivity("Admin menyekat akaun: " + user.name);
+
+  renderAdmin();
+
+}
+
+/* =====================================================
+
+   PANEL ADMIN: PERMOHONAN INISIATIF HIJAU
+
+\===================================================== */
+
+function renderInitiativeApplications() {
+
+  if (!currentUser || currentUser.role !== "admin") return;
+
+  initiativeApplications = readStorage(INITIATIVES_KEY, []);
+
+  const rows = document.getElementById("initiativeRows");
+
+  if (initiativeApplications.length === 0) {
+
+    rows.innerHTML =
+
+      '<tr><td colspan="7">Belum ada permohonan diterima.</td></tr>';
+
+    return;
+
+  }
+
+  rows.innerHTML = initiativeApplications.map(item => {
+
+    let actionButtons = "";
+
+    if (item.status === "Menunggu Semakan") {
+
+      actionButtons = `
+
+        <button class="btn btn-small"
+
+          onclick="kemasKiniPermohonan('${item.id}', 'Diluluskan')">
+
+          Luluskan
+
+        </button>
+
+        <button class="btn btn-red btn-small"
+
+          onclick="kemasKiniPermohonan('${item.id}', 'Ditolak')">
+
+          Tolak
+
+        </button>
+
+      `;
+
+    } else if (item.status === "Diluluskan") {
+
+      actionButtons = `
+
+        <button class="btn btn-small"
+
+          onclick="kemasKiniPermohonan('${item.id}', 'Selesai')">
+
+          Tandakan Selesai
+
+        </button>
+
+      `;
+
+    } else {
+
+      actionButtons = `
+
+        <button class="btn btn-grey btn-small"
+
+          onclick="kemasKiniPermohonan('${item.id}', 'Menunggu Semakan')">
+
+          Buka Semula
+
+        </button>
+
+      `;
+
+    }
+
+    return `
+
+      <tr>
+
+        <td>${escapeHtml(item.date)}</td>
+
+        <td>${escapeHtml(item.name)}</td>
+
+        <td>${escapeHtml(item.email)}</td>
+
+        <td>${escapeHtml(item.type)}</td>
+
+        <td>${escapeHtml(item.message)}</td>
+
+        <td><span class="status">${escapeHtml(item.status)}</span></td>
+
+        <td>${actionButtons}</td>
+
+      </tr>
+
+    `;
+
+  }).join("");
+
+}
+
+function kemasKiniPermohonan(id, statusBaharu) {
+
+  if (!currentUser || currentUser.role !== "admin") {
+
+    alert("Hanya Admin boleh mengubah status permohonan.");
+
+    return;
+
+  }
+
+  initiativeApplications = readStorage(INITIATIVES_KEY, []);
+
+  const application = initiativeApplications.find(item => item.id === id);
+
+  if (!application) {
+
+    alert("Permohonan tidak dijumpai.");
+
+    return;
+
+  }
+
+  application.status = statusBaharu;
+
+  saveData(INITIATIVES_KEY, initiativeApplications);
+
+  recordActivity(
+
+    "Admin mengemas kini permohonan " + application.name +
+
+    " kepada status " + statusBaharu
+
+  );
+
+  renderAdmin();
+
+}
+
+/* =====================================================
+
+   PULIHKAN SESI DAN MULAKAN LAMAN WEB
+
+\===================================================== */
+
+function restoreSession() {
+
+  ensureAdmin();
+
+  const session = readStorage(SESSION_KEY, null);
+
+  if (!session || !session.email) return;
+
+  users = readStorage(USERS_KEY, []);
+
+  const user = users.find(item =>
+
+    item.email.toLowerCase() === session.email.toLowerCase()
+
+  );
+
+  if (!user || user.status !== "Diluluskan") {
+
+    localStorage.removeItem(SESSION_KEY);
+
+    return;
+
+  }
+
+  currentUser = user;
+
+  openWebsite();
+
+}
+
+restoreSession();
+
+</script>
+
+</body>
+
+</html>
